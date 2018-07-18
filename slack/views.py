@@ -9,7 +9,7 @@ slack = Slack()
 def meme():
     data = request.form if request.method == 'POST' else request.args
     token, text, channel_id, user_id = [data[key] for key in ("token", "text", "channel_id", "user_id")]
-    text = text.strip()
+    # text = text.strip()
 
     if token != slack.SLASH_COMMAND_TOKEN:
         return "Unauthorized."
